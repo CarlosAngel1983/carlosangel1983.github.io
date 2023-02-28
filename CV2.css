@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #E9ECF4;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat (5,auto);
+    grid-template-areas: "header header header"
+                        "presentacion presentacion sidebar"
+                        "DatosPerson Estudios Experiencia"
+                        "DatosPersonales EstudiosCursados ExperienciaProfesional"
+                        "footer footer footer";
+                        
+}
+
+.contenedor > div ,
+.contenedor .header,
+.contenedor .presentacion,
+.contenedor .sidebar,
+.contenedor .footer{
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .header{
+    background: #12203E;
+    color: #fff;
+    grid-area: header;
+}
+
+.contenedor .presentacion{
+    background: #12203E;
+    color: #fff;
+    grid-area: presentacion;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+.contenedor .logo{
+    width: presentacion;
+    height: 120px;
+}
+
+.contenedor .sidebar{
+    background: #FAA43D;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+
+.contenedor #DatosPerson{
+    grid-area: DatosPerson;
+    cursor:pointer;
+}
+
+.contenedor #Estudios{
+    grid-area: Estudios;
+    cursor:pointer;
+}
+
+.contenedor #Experiencia{
+    grid-area: Experiencia;
+    cursor:pointer;
+}
+
+
+.contenedor #DatosPersonales,
+.contenedor #EstudiosCursados,
+.contenedor #ExperienciaProfesional {
+    background: #3f3f3f;
+    color: #FFF;
+    text-align: center;
+    border: 2px solid #12203e;
+    border-radius: 10px;
+    
+}
+
+.contenedor #DatosPersonales{
+    grid-area: DatosPersonales;
+    visibility: hidden;
+    
+    
+}
+.contenedor #EstudiosCursados{
+    grid-area: EstudiosCursados;
+    visibility: hidden;
+}
+
+.contenedor #ExperienciaProfesional{
+    grid-area: ExperienciaProfesional;
+    visibility: hidden;
+}
+
+.contenedor .redes{
+    width: 20px;
+    height: 20px;
+    
+}
+
+.contenedor .footer{
+    background: #12203e;
+    color: #FFF;
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+
+@media screen and (max-width: 400px) {
+    .contenedor{
+        grid-template-areas:"header"
+                            "sidebar"
+                            "presentacion"
+                            "DatosPerson"
+                            "Estudios"
+                            "Experiencia"
+                            "DatosPersonales"
+                            "footer";
+        
+    }
+    .contenedor #DatosPersonales,
+    .contenedor #EstudiosCursados,
+    .contenedor #ExperienciaProfesional {
+    grid-area: DatosPersonales;
+    
+}    
+}
